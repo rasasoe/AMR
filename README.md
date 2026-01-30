@@ -3,7 +3,11 @@
 # 🤖 3륜 옴니휠 로봇 속도 제어 시스템
 
 <div align="center">
-  <img src="assets/images/IMG_1223.HEIC" alt="로봇 정면 사진" width="300" />
+  <img src="assets/images/IMG_1223.HEIC" alt="로봇 정면 사진" width="320" />
+  
+  <br/><br/>
+  
+  <img src="assets/video/robot_demo.gif" alt="로봇 동작 시연" width="400" />
 </div>
 
 <p align="center">
@@ -176,15 +180,7 @@ self.kp = 10.0  # 권장 초기값: 10.0 — 낮은 값에서 시작해 점진�
 
 ## � 동작 영상
 
-<div align="center">
-  
-[![로봇 동작 영상](https://img.shields.io/badge/🎬-바퀴_동작_시연-blue?style=for-the-badge)](assets/video/_talkv_wyuEkOearh_6kskM2hgC7MM4l6HgnPXjk_talkv_high.mp4)
-
-<video src="assets/video/_talkv_wyuEkOearh_6kskM2hgC7MM4l6HgnPXjk_talkv_high.mp4" width="480" controls></video>
-
-<p><sub>실제 로봇 구동 영상 (MP4)</sub></p>
-
-</div>
+> **💡 팁**: GIF 애니메이션으로 빠르게 동작을 확인할 수 있습니다.
 
 -----
 
