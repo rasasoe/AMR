@@ -3,10 +3,15 @@
 # 🤖 3륜 옴니휠 로봇 속도 제어 시스템
 
 <div align="center">
-  <img src="assets/images/IMG_1223.HEIC" alt="로봇 정면 사진" width="320" />
+  <h3>🔝 로봇 상단</h3>
+  <img src="assets/images/IMG_1223.jpg" alt="로봇 상단 사진" width="350" />
+  
+  <h3>🔻 로봇 하단</h3>
+  <img src="assets/images/IMG_1409.jpg" alt="로봇 하단 사진" width="350" />
   
   <br/><br/>
   
+  <h3>⚙️ 동작 시연</h3>
   <img src="assets/video/robot_demo.gif" alt="로봇 동작 시연" width="400" />
 </div>
 
