@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect x="10" y="10" width="220" height="160" fill="#f0f4f8" stroke="#333"/>
+  <text x="20" y="40" font-family="sans-serif" font-size="14" fill="#111">Raspberry Pi Pico</text>
+  <g font-family="sans-serif" font-size="12" fill="#111">
+    <text x="30" y="70">GP0: M1 IN1</text>
+    <text x="30" y="90">GP1: M1 IN2</text>
+    <text x="30" y="110">GP2: M1 ENA (PWM)</text>
+    <text x="30" y="130">GP3: M1 Encoder A</text>
+  </g>
+
+  <rect x="300" y="10" width="220" height="160" fill="#fff7e6" stroke="#333"/>
+  <text x="310" y="40" font-family="sans-serif" font-size="14" fill="#111">Motor Driver (L298N)</text>
+  <text x="310" y="70" font-family="sans-serif" font-size="12">Connect ENA to Pico PWM pin</text>
+
+  <line x1="230" y1="80" x2="300" y2="80" stroke="#333" stroke-width="2"/>
+  <text x="240" y="72" font-family="sans-serif" font-size="12">ENA/IN</text>
+
+  <rect x="10" y="200" width="150" height="180" fill="#eef7ff" stroke="#333"/>
+  <text x="20" y="230" font-family="sans-serif" font-size="14">Wheel / Encoder</text>
+  <text x="20" y="250" font-family="sans-serif" font-size="12">M1 Encoder A -> GP3</text>
+
+  <g font-family="sans-serif" font-size="12" fill="#999">
+    <text x="10" y="390">(This is a simplified wiring diagram. Replace with photos or detailed schematic.)</text>
+  </g>
+</svg>

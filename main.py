@@ -16,7 +16,7 @@ if __name__ == "__main__":
         robot.holonomic(speed=0.5, angle_deg=90)
         
         start_time = time.ticks_ms()
-        while time.ticks_diff(time.ticks_ms(), start_time) < 30000:
+        while time.ticks_diff(time.ticks_ms(), start_time) < 3000:  # 3000 ms = 3 seconds
             robot.update()
             time.sleep_ms(UPDATE_INTERVAL_MS)
         robot.stop()
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         robot.non_holonomic(vx=0, vy=0.2, angular_velocity_dps=-45)
 
         start_time = time.ticks_ms()
-        while time.ticks_diff(time.ticks_ms(), start_time) < 30000:
+        while time.ticks_diff(time.ticks_ms(), start_time) < 3000:  # 3000 ms = 3 seconds
             robot.update()
             time.sleep_ms(UPDATE_INTERVAL_MS)
         robot.stop()

@@ -13,17 +13,32 @@ class Motor:
         self.stop()
 
     def move(self, speed):
-        duty = int(min(abs(speed), 65535))
+        """Accepts either a normalized value in [-1.0, 1.0] or a raw integer magnitude up to 65535.
+        - If abs(speed) <= 1.0: treat as normalized duty and scale to 0..65535
+        - Else: treat as raw duty value (clamped to 65535)
+        """
+        if speed == 0:
+            self.stop()
+            return
+
+        # Normalize or clamp
+        if abs(speed) <= 1.0:
+            duty = int(min(abs(speed), 1.0) * 65535)
+        else:
+            duty = int(min(abs(speed), 65535))
+
+        if duty == 0:
+            self.stop()
+            return
+
         if speed > 0:
             self.in1.value(1)
             self.in2.value(0)
-            self.en.duty_u16(duty)
-        elif speed < 0:
+        else:
             self.in1.value(0)
             self.in2.value(1)
-            self.en.duty_u16(duty)
-        else:
-            self.stop()
+
+        self.en.duty_u16(duty)  # set PWM duty (0..65535)
 
     def stop(self):
         self.in1.value(0)
@@ -32,17 +47,28 @@ class Motor:
 
 class Encoder:
     """단일 엔코더의 펄스 수를 세는 클래스"""
-    def __init__(self, pin_a):
+    def __init__(self, pin_a, pin_b=None):
         self.pin_a = Pin(pin_a, Pin.IN, Pin.PULL_UP)
+        self.pin_b = Pin(pin_b, Pin.IN, Pin.PULL_UP) if pin_b is not None else None
         self.count = 0
         self.last_tick = 0
+        # Attach IRQ to channel A (rising edge). If channel B exists, its state is used to determine direction.
         self.pin_a.irq(trigger=Pin.IRQ_RISING, handler=self._pulse)
 
     def _pulse(self, pin):
         # 디바운싱 로직: 최소 200us 간격의 펄스만 카운트
         current_tick = time.ticks_us()
         if time.ticks_diff(current_tick, self.last_tick) > 200:
-            self.count += 1
+            if self.pin_b is None:
+                # 단채널 엔코더: 펄스를 증가시키기만 함 (방향 정보 없음)
+                self.count += 1
+            else:
+                # 쿼드러처(A rising, check B) 기반 방향 판별
+                # 주의: 하드웨어에 따라 조건(0/1)이 반대일 수 있으니 실제 하드웨어에서 확인하세요.
+                if self.pin_b.value() == 0:
+                    self.count += 1
+                else:
+                    self.count -= 1
         self.last_tick = current_tick
 
     def get_count(self):
@@ -63,11 +89,12 @@ class OmniRobot:
         self.WHEEL_DISTANCE_FROM_CENTER = 0.1
         self.MOTOR_ANGLES_DEG = [330, 90, 210] # 사진 속 로봇(Kiwi Drive) 기준
         
-        # P 제어 게인
-        self.kp = 1000.0
+        # P 제어 게인 (권장 초기값: 10.0). 하드웨어에 따라 이 값을 낮게 시작해 점차 올리세요.
+        self.kp = 10.0
         
         # 하드웨어 초기화 (M1, M2, M3 순서)
         self.motors = [Motor(2, 0, 1), Motor(8, 6, 7), Motor(12, 10, 11)]
+        # 엔코더: 듀얼 채널(A/B)이 있으면 Encoder(pin_a, pin_b) 형태로 전달하세요.
         self.encoders = [Encoder(3), Encoder(9), Encoder(13)]
         
         # 상태 변수 초기화
@@ -118,11 +145,9 @@ class OmniRobot:
             current_count = self.encoders[i].get_count()
             pulse_diff = current_count - self.last_encoder_counts[i]
             
-            # 방향 추정 (PWM 명령 기반)
-            direction = 1 if self.pwm_outputs[i] >= 0 else -1
-            
             revolutions = pulse_diff / self.PULSE_PER_WHEEL_REV
-            self.current_rpms[i] = (revolutions / dt_s) * 60 * direction if dt_s > 0 else 0
+            # pulse_diff can be signed when using a quadrature encoder implementation
+            self.current_rpms[i] = (revolutions / dt_s) * 60 if dt_s > 0 else 0
             self.last_encoder_counts[i] = current_count
             
             # 올바른 P제어 로직 (오차를 누적하지 않음)
