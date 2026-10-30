@@ -7,9 +7,9 @@
 
 <div align="center">
 
-![MicroPython](https://img.shields.io/badge/MicroPython-RP2040-2F70BA)
-![Feedback](https://img.shields.io/badge/Control-Encoder%20%2B%20P--Control-0D9488)
-![Drive](https://img.shields.io/badge/Drive-Kiwi%20Omni%20Drive-64748B)
+<img alt="MicroPython" src="https://img.shields.io/badge/MicroPython-RP2040-2F70BA"/>
+<img alt="Feedback" src="https://img.shields.io/badge/Control-Encoder%20%2B%20P--Control-0D9488"/>
+<img alt="Drive" src="https://img.shields.io/badge/Drive-Kiwi%20Omni%20Drive-64748B"/>
 
 <table><tr>
 <td width="50%" align="center"><strong>Top view</strong><br/><img src="assets/images/IMG_1223.jpg" width="280" alt="Top of the robot"/></td>
