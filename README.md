@@ -2,6 +2,9 @@
 
 # 🤖 3륜 옴니휠 로봇 속도 제어 시스템
 
+<p align="center"><b>🌐 Language</b> &nbsp; <strong>🇰🇷 한국어</strong> &nbsp; | &nbsp; <a href="README.en.md">🇺🇸 English</a></p>
+
+
 <div align="center">
   <h3>🔝 로봇 상단</h3>
   <img src="assets/images/IMG_1223.jpg" alt="로봇 상단 사진" width="350" />
