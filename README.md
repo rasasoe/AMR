@@ -1,6 +1,8 @@
+<p align="center"><img src="assets/portfolio-banner.svg" width="100%" alt="AMR — project overview"></p>
+
 -----
 
-# 🤖 3륜 옴니휠 로봇 속도 제어 시스템
+# AMR — 3륜 옴니휠 속도 제어
 
 <p align="center"><b>🌐 Language</b> &nbsp; <strong>🇰🇷 한국어</strong> &nbsp; | &nbsp; <a href="README.en.md">🇺🇸 English</a></p>
 
