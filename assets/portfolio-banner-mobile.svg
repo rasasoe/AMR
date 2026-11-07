@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="300" viewBox="0 0 680 300" role="img" aria-labelledby="title desc">
+<title id="title">AMR — portfolio</title><desc id="desc">ROBOTICS / MOTOR CONTROL. ENCODER FEEDBACK / P CONTROL.</desc>
+<rect width="680" height="300" fill="#111111"/>
+<g font-family="Georgia,'Times New Roman',serif">
+<text x="34" y="44" fill="#B7B4AE" font-size="14" letter-spacing="2">RASASOE / ROBOTICS / MOTOR CONTROL</text>
+<text x="34" y="166" fill="#F4F1EA" font-weight="600" font-size="70" letter-spacing="0">AMR</text>
+<path d="M34 199H646" stroke="#605D57" stroke-width="1"/>
+<text x="34" y="236" fill="#B7B4AE" font-size="16" letter-spacing="0.8">ENCODER FEEDBACK / P CONTROL</text>
+</g>
+</svg>
