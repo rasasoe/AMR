@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/portfolio-banner.svg" width="100%" alt="AMR — project overview"></p>
+
 # AMR — Three-Wheel Omni Robot Speed Control
 
 <div align="center">
@@ -7,8 +9,6 @@
 
 <div align="center">
 
-<img alt="MicroPython" src="https://img.shields.io/badge/MicroPython-RP2040-2F70BA"/>
-<img alt="Feedback" src="https://img.shields.io/badge/Control-Encoder%20%2B%20P--Control-0D9488"/>
 <img alt="Drive" src="https://img.shields.io/badge/Drive-Kiwi%20Omni%20Drive-64748B"/>
 
 <table><tr>
