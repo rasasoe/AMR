@@ -1,32 +1,38 @@
-<p align="center"><img src="assets/portfolio-banner.svg" width="100%" alt="AMR — project overview"></p>
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/portfolio-banner-mobile.svg">
+  <img src="assets/portfolio-banner.svg" width="100%" alt="AMR — 엔코더 피드백 기반 옴니휠 로봇 제어">
+</picture>
 
------
+<p align="right"><strong>한국어</strong> / <a href="README.en.md">English</a></p>
 
-# AMR — 3륜 옴니휠 속도 제어
+# AMR — Pico 기반 옴니휠 속도 제어
 
-<p align="center"><b>🌐 Language</b> &nbsp; <strong>🇰🇷 한국어</strong> &nbsp; | &nbsp; <a href="README.en.md">🇺🇸 English</a></p>
+**로봇 개발 경험 02 / 03 · Raspberry Pi Pico · MicroPython · Encoder · P Control**
 
+MRP3MV4에서 센서와 주행을 연결한 경험을 바탕으로, **이번에는 모터 제어 로직을 직접 만들어보자**는 목표로 진행했습니다. Pico가 엔코더로 실제 바퀴 회전 속도를 읽고 목표 속도와의 오차를 줄이도록 구성했습니다.
 
-<div align="center">
-  <h3>🔝 로봇 상단</h3>
-  <img src="assets/images/IMG_1223.jpg" alt="로봇 상단 사진" width="350" />
-  
-  <h3>🔻 로봇 하단</h3>
-  <img src="assets/images/IMG_1409.jpg" alt="로봇 하단 사진" width="350" />
-  
-  <br/><br/>
-  
-  <h3>⚙️ 동작 시연</h3>
-  <img src="assets/video/robot_demo.gif" alt="로봇 동작 시연" width="400" />
-</div>
+## 구현한 핵심 제어
 
-<p align="center">
-  <strong>Raspberry Pi Pico와 MicroPython을 기반한 정밀 속도 제어 시스템</strong>
-</p>
+- **엔코더 피드백:** 각 바퀴의 회전량을 읽어 현재 RPM 계산
+- **P제어:** 목표 RPM과 측정 RPM의 차이로 모터 출력 조정
+- **역기구학:** 로봇의 평면 이동·회전 명령을 세 바퀴의 RPM으로 변환
+- **실험과 한계:** 속도 제어 중심으로 개발했으며 정확한 위치·오도메트리 제어는 별도 과제로 남았습니다
 
-이 프로젝트는 Raspberry Pi Pico와 MicroPython을 사용하여 3륜 옴니휠 로봇(Kiwi Drive 방식)의 속도를 정밀하게 제어하는 것을 목표로 합니다. 엔코더 피드백과 P제어(비례 제어)를 통해 로봇이 목표 속도를 안정적으로 유지하도록 구현되었습니다.
+## 실제 로봇과 동작
 
------
+<p align="center"><img src="assets/video/robot_demo.gif" width="100%" alt="AMR 로봇 바퀴 제어와 주행 실제 실험 GIF"></p>
+
+<details>
+<summary><strong>실물 로봇 상단·하단 사진 보기</strong></summary>
+
+<p align="center"><img src="assets/images/IMG_1223.jpg" width="420" alt="AMR 로봇 상단"></p>
+<p align="center"><img src="assets/images/IMG_1409.jpg" width="420" alt="AMR 로봇 하단"></p>
+
+</details>
+
+**다음 단계:** 이 모터·엔코더 경험을 [BuddyBot](https://github.com/rasasoe/BuddyBot)의 ROS 2–MCU 통합 설계에 활용했습니다. [이전 AVR 프로젝트](https://github.com/rasasoe/MRP3MV4)
+
+---
 
 ## 📑 목차
 
