@@ -9,7 +9,6 @@
 
 <div align="center">
 
-<img alt="Drive" src="https://img.shields.io/badge/Drive-Kiwi%20Omni%20Drive-64748B"/>
 
 <table><tr>
 <td width="50%" align="center"><strong>Top view</strong><br/><img src="assets/images/IMG_1223.jpg" width="280" alt="Top of the robot"/></td>
