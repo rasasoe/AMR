@@ -90,7 +90,7 @@
 
 -----
 
-## � Getting Started (초기 설정)
+## 🚀 Getting Started (초기 설정)
 
 1. **MicroPython 펌웨어 업로드**
    - Raspberry Pi Pico를 BOOTSEL 모드로 연결한 후 MicroPython UF2 파일을 복사하세요: https://micropython.org/download/rp2-pico/
@@ -119,7 +119,7 @@
 
 </details>
 
-## �🕹️ 사용 방법
+## 🕹️ 사용 방법
 
 ### 1\. 동작 설정 (`main.py`)
 
@@ -161,7 +161,7 @@ robot.non_holonomic(vx=0.1, vy=0.2, angular_velocity_dps=0)
 
 ### 2\. P 게인 튜닝 (`motor_controller.py`)
 
-로봇의 반응이 너무 느리거나 심하게 떨릴 경우, \*\*`motor_controller.py`\*\*의 `kp` 값을 조절해야 합니다. **이 과정이 매우 중요합니다.**
+로봇의 반응이 너무 느리거나 심하게 떨릴 경우, **`motor_controller.py`**의 `kp` 값을 조절해야 합니다. **이 과정이 매우 중요합니다.**
 
 ```python
 # motor_controller.py / OmniRobot 클래스 내부
@@ -186,7 +186,7 @@ self.kp = 10.0  # 권장 초기값: 10.0 — 낮은 값에서 시작해 점진�
 
 ---
 
-## � 동작 영상
+## 📹 동작 영상
 
 > **💡 팁**: GIF 애니메이션으로 빠르게 동작을 확인할 수 있습니다.
 
