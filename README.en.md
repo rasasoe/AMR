@@ -1,21 +1,38 @@
-<p align="center"><img src="assets/portfolio-banner.svg" width="100%" alt="AMR — project overview"></p>
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/portfolio-banner-mobile.svg">
+  <img src="assets/portfolio-banner.svg" width="100%" alt="AMR — encoder feedback and speed control">
+</picture>
 
-# AMR — Three-Wheel Omni Robot Speed Control
+<p align="right"><a href="README.md">한국어</a> / <strong>English</strong></p>
 
-<div align="center">
-  <p><a href="README.md">🇰🇷 한국어</a> · <strong>🇺🇸 English</strong></p>
-</div>
+# AMR — Pico Omnidirectional Speed Control
 
+**Robotics progression 02 / 03 · Raspberry Pi Pico · MicroPython · Encoders · P Control**
 
-<div align="center">
+Building on the AVR sensor-and-motion experiments in MRP3MV4, this project asked: **can we implement the motor-speed feedback loop ourselves?** Pico reads encoder signals and adjusts each wheel’s output toward the target RPM.
 
+## Implemented control logic
 
-<table><tr>
-<td width="50%" align="center"><strong>Top view</strong><br/><img src="assets/images/IMG_1223.jpg" width="280" alt="Top of the robot"/></td>
-<td width="50%" align="center"><strong>Bottom view</strong><br/><img src="assets/images/IMG_1409.jpg" width="280" alt="Bottom drivetrain of the robot"/></td>
-</tr></table>
-<img src="assets/video/robot_demo.gif" width="430" alt="Robot motion demonstration"/>
-</div>
+- Encoder-based per-wheel RPM estimation
+- Proportional speed control using the difference between target and measured RPM
+- Inverse kinematics from planar motion/rotation to three wheel speeds
+- Speed-control demonstration; accurate positioning and odometry remain out of scope
+
+## Actual robot footage
+
+<p align="center"><img src="assets/video/robot_demo.gif" width="100%" alt="AMR wheel-control demonstration GIF"></p>
+
+<details>
+<summary><strong>View upper and lower robot photographs</strong></summary>
+
+<p align="center"><img src="assets/images/IMG_1223.jpg" width="420" alt="AMR upper view"></p>
+<p align="center"><img src="assets/images/IMG_1409.jpg" width="420" alt="AMR lower view"></p>
+
+</details>
+
+**Next:** Encoder and motor-control experience informed the later [BuddyBot](https://github.com/rasasoe/BuddyBot) integration. [Earlier AVR project](https://github.com/rasasoe/MRP3MV4)
+
+---
 
 ## Overview
 
